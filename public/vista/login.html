@@ -6,11 +6,25 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Login | Correo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+    
     <body>
-        <div>TODO write content</div>
+    <header class="cab">
+         <h1>Inicio de Sesión</h1>
+    </header>
+        <form id="formulario01" method="POST" action="../controladores/login.php">
+            <label for="correo">Correo electrónico(*)
+            </label>
+            <input type="text" id="correo" name="correo" value="" placeholder="Ingrese el correo ..." />
+            <br>
+            <label for="nombres">Constraseña (*)
+            </label>
+            <input type="password" id="contrasena" name="contrasena" value="" placeholder="Ingrese su contraseña ..." />
+            <br>
+            <input type="submit" id="login" name="login" value="Iniciar Sesión" />
+        </form>
     </body>
 </html>

@@ -3,7 +3,7 @@
     $servername = "localhost";
     $username = "riera";
     $password = "cuenca";
-    $dbname = "hipermedial";
+    $dbname = "db_correo";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

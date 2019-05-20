@@ -10,8 +10,8 @@ and open the template in the editor.
         <title>Registro usuario | Correo</title>
     </head>
     <body>
-               
-               <?php include '../../config/conexionBD.php'; ?>
+
+        <?php include '../../config/conexionBD.php'; ?>
         <section id="container">
             <div class="form_register">
                 <h1><i class="fas fa-user-plus"></i> Registro Usuario</h1>
@@ -29,24 +29,19 @@ and open the template in the editor.
                     <input type="email" name="correo" id="correo" placeholder="Correo Electronico">
                     <label for="clave">Clave: </label>
                     <input type="password" name="clave" id="clave" placeholder="Clave de acceso">
-                    <label for="rol">Tipo Uusario: </label>
+                    <label for="rol">Tipo Usario: </label>
 
-                    <?php
-                    $query_rol = mysqli_query($conection, "SELECT * FROM rol");
-                    mysqli_close($conection);
-                    $result_rol = mysqli_num_rows($query_rol);
-                    ?>
-
-                    <select name="rol" id="rol">
-                        <?php
-                        if ($result_rol > 0) {
-                            while ($rol = mysqli_fetch_array($query_rol)) {
-                                ?>
-                                <option value="<?php echo $rol['idrol']; ?>"><?php echo $rol['rol']; ?></option>
-                                <?php
-                            }
-                        }
-                        ?>
+                    <div class="photo">
+                        <label for="foto">Foto</label>
+                        <div class="prevPhoto">
+                            <span class="delPhoto notBlock">X</span>
+                            <label for="foto"></label>
+                        </div>
+                        <div class="upimg">
+                            <input type="file" name="foto" id="foto">
+                        </div>
+                        <div id="form_alert"></div>
+                    </div>
 
                     </select> 
                     <br>

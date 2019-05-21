@@ -54,6 +54,7 @@ and open the template in the editor.
                 }
             }
         }
+         $conn->close();
         ?>
     </body>
 </html>

@@ -27,6 +27,7 @@ and open the template in the editor.
             echo "$sqlContrasena2";
             if ($conn->query($sqlContrasena2) === TRUE) {
                 echo "Se ha actualizado la contraseña correctamemte!!!<br>";
+                 header('Location: ../../vista/admin/index.php');
             } else {
                 echo "<p>Error: " . mysqli_error($conn) . "</p>";
             }

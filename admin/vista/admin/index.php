@@ -56,9 +56,9 @@
 
                                 <?php //if ($data["idusuario"] != 1) {  ?>
                                 |
-                                <a class="link_delete" href="../../../public/vista/eliminar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                                <a class="link_delete" href="eliminar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Eliminar</a>
                                 |
-                                <a class="link_delete" href="../../../public/vista/cambiar_contrasena.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Cambiar Contraseña</a>
+                                <a class="link_delete" href="cambiar_contrasena.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Cambiar Contraseña</a>
                                  <?php //}  ?>
                             </td>
 

@@ -47,6 +47,7 @@ and open the template in the editor.
 
                     if ($sql_update) {
                         echo "Usuario modificado correctamenta";
+                         header('Location: ../../vista/admin/index.php');
                         $alert = '<p class="msg_save">Usuario actualizado correctamente.</p>';
                     } else {
                         $alert = '<p class="msg_error">Error al actualizar  el usuario.</p>';

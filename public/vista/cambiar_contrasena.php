@@ -10,9 +10,12 @@ and open the template in the editor.
         <title>Cambiar Contraseña</title>
     </head>
     <body>
-        <?php $codigo = $_GET["codigo"]; ?>
+          <h1><i class="fas fa-users"></i> Cambiar Contraseña</h1>
+        <?php $codigo = $_GET["id"]; ?>
         
-        <form id="formulario01" method="POST" action="../../controladores/usuario/cambiar_contrasena.php"> <input type="hidden" id="codigo" name="codigo" value="<?php echo $codigo ?>" />
+          <form id="formulario01" method="POST" action="../controlador/modificar_contrasena.php"> 
+            <input type="hidden" id="codigo" name="codigo" value="<?php echo "$codigo" ?>" />
+            
             <label for="cedula">Contraseña Actual (*)</label>
             <input type="password" id="contrasena1" name="contrasena1" value="" required placeholder="Ingrese su contraseña actual ..."/>
             <br>
@@ -20,6 +23,7 @@ and open the template in the editor.
             <input type="password" id="contrasena2" name="contrasena2" value="" required placeholder="Ingrese su contraseña nueva ..."/>
             <br>
             <input type="submit" id="modificar" name="modificar" value="Modificar" />
-            <input type="reset" id="cancelar" name="cancelar" value="Cancelar" /> </form>
-    </body>
+            <input type="reset" id="cancelar" name="cancelar" value="Cancelar" />
+        </form>
+    </body><a href="../controlador/modificar_contrasena.php"></a>
 </html>

@@ -56,7 +56,8 @@ and open the template in the editor.
             <div class="form_register">
                 <h1><i class="far fa-edit"></i>Actualizar Usuario | Correo</h1>
                 <hr>
-                <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
+                <div class="alert"><?php echo isset($alert) ? $alert : ''; ?>
+            </div>
 
                 <a href="../../admin/vista/usuario/index.php"></a>
                 <form action="../controlador/modificar_usuario.php" method="post">

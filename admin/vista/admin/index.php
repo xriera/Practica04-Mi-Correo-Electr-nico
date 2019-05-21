@@ -52,7 +52,7 @@
                             <td><?php echo $data["rol"]; ?></td>
                             <td><img src="<?php echo $foto; ?>" alt="<?php echo $data["descripcion"]; ?>" height="35px"width="35px"></td>
                             <td>
-                                <a class="link_edit" href="../../../public/vista/editar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="far fa-edit"></i> Editar</a>
+                                <a class="link_edit" href="editar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="far fa-edit"></i> Editar</a>
 
                                 <?php //if ($data["idusuario"] != 1) {  ?>
                                 |

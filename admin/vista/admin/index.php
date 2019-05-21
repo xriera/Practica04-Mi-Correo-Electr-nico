@@ -12,7 +12,7 @@
         <?php include 'includes/header.php'; ?>
         <section id="container">
             <h1><i class="fas fa-users"></i> Lista de usuarios</h1>
-            <a href=".././../../public/vista/registro_usuario.php" class="btn_new"><i class="fas fa-user-plus"></i> Crear Usuario</a>
+            <a href="../../vista/admin/registro_usuario.php" class="btn_new"><i class="fas fa-user-plus"></i> Crear Usuario</a>
 
             <!--  <form action="buscar_usuario.php" method="get" class="form_search">
                   <input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
@@ -31,7 +31,7 @@
                     <th>Acciones</th>
 
                 </tr>
-
+                <a href="../../../"></a>
                 <?php
                 include '../../../config/conexionBD.php';
                 $query = mysqli_query($conn, "SELECT u.idusuario, u.nombre, u.apellido,u.fechaNacimiento, u.correo,u.foto, r.rol FROM usuario  u INNER JOIN rol r  ON u.rol=r.idrol WHERE estatus = 1 ORDER BY u.idusuario");

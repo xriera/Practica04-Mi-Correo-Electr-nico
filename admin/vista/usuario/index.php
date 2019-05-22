@@ -1,20 +1,18 @@
-
- <?php
-session_start();
-include '../../../conexion.php';
-?>
 <!DOCTYPE html>
-<html lang="es">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
     <head>
         <meta charset="UTF-8">
-
-        <title>Lista de Usuarios Cooreo</title>
-
+        <title></title>
     </head>
     <body>
         <?php include 'includes/header.php'; ?>
         <section id="container">
-            <h1><i class="fas fa-users"></i> Lista de usuarios</h1>
+            <h1><i class="fas fa-users"></i>Perfil | Correo</h1>
             <a href="../../vista/admin/registro_usuario.php" class="btn_new"><i class="fas fa-user-plus"></i> Crear Usuario</a>
 
             <!--  <form action="buscar_usuario.php" method="get" class="form_search">
@@ -36,8 +34,10 @@ include '../../../conexion.php';
                 </tr>
                 <a href="../../../"></a>
                 <?php
+                session_start();                      
+                       $correo = $_SESSION['email'];
                 include '../../../config/conexionBD.php';
-                $query = mysqli_query($conn, "SELECT u.idusuario, u.nombre, u.apellido,u.fechaNacimiento, u.correo,u.foto, r.rol FROM usuario  u INNER JOIN rol r  ON u.rol=r.idrol WHERE estatus = 1 ORDER BY u.idusuario");
+                $query = mysqli_query($conn, "SELECT * FROM usuario WHERE correo='$correo'");
                 mysqli_close($conn);
                 $result = mysqli_num_rows($query);
                 if ($result > 0) {
@@ -77,5 +77,5 @@ include '../../../conexion.php';
         </section>
 
         <?php include "includes/footer.php"; ?>
-    </body> 
-</html> 
+    </body>
+</html>

@@ -29,7 +29,7 @@ and open the template in the editor.
                     <input type="email" name="correo" id="correo" placeholder="Correo Electronico">
                     <label for="clave">Clave: </label>
                     <input type="password" name="clave" id="clave" placeholder="Clave de acceso">
-                    <label for="rol">Tipo Usario: </label>
+                    
 
                     <div class="photo">
                         <label for="foto">Foto</label>

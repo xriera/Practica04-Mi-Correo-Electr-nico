@@ -34,7 +34,7 @@ include '../../../conexion.php';
                     <th>Acciones</th>
 
                 </tr>
-                <a href="../../../"></a>
+              
                 <?php
                 include '../../../config/conexionBD.php';
                 $query = mysqli_query($conn, "SELECT u.idusuario, u.nombre, u.apellido,u.fechaNacimiento, u.correo,u.foto, r.rol FROM usuario  u INNER JOIN rol r  ON u.rol=r.idrol WHERE estatus = 1 ORDER BY u.idusuario");

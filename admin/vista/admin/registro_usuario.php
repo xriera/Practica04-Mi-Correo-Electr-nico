@@ -18,7 +18,7 @@ and open the template in the editor.
                 <hr>
                 <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
 
-                <form id="formulario01" method="POST" action="../../controlador/admin/crear_usuario.php" >
+                <form id="formulario01" method="POST" action="../../controlador/admin/crear_usuario.php" enctype="multipart/form-data">
                     <label for="nombre">Nombre: </label>
                     <input type="text" name="nombre" id="nombre" placeholder="Nombres Completo...">
                     <label for="nombre">Apellido: </label>
@@ -30,8 +30,8 @@ and open the template in the editor.
                     <label for="clave">Clave: </label>
                     <input type="password" name="clave" id="clave" placeholder="Clave de acceso">
                     
-
-                    <div class="photo">
+                    
+                <   <div class="photo">
                         <label for="foto">Foto</label>
                         <div class="prevPhoto">
                             <span class="delPhoto notBlock">X</span>
@@ -41,9 +41,9 @@ and open the template in the editor.
                             <input type="file" name="foto" id="foto">
                         </div>
                         <div id="form_alert"></div>
-                    </div>
+                    </div> 
 
-                    </select> 
+                   
                     <br>
                     <button type="submit" class="btn_save"><i class="far fa-save"></i> Crear Usuario</button>
                 </form>

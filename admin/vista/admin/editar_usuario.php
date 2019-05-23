@@ -72,7 +72,7 @@ and open the template in the editor.
                     <input type="email" name="correo" id="correo" placeholder="Correo Electronico" value="<?php echo $correo; ?>">
                     <label for="clave">Clave: </label>
                     <input type="password" name="clave" id="clave" placeholder="Clave de acceso">
-                    <label for="rol">Tipo Uusario: </label>
+                    <label for="rol">Tipo Usuario: </label>
                     
                     <?php
                     include '../../../config/conexionBD.php';

@@ -52,8 +52,9 @@ and open the template in the editor.
                             <td><?php echo $data["apellido"]; ?></td>
                             <td><?php echo $data["fechaNacimiento"]; ?></td>
                             <td><?php echo $data["correo"]; ?></td>
+                            
                             <td><?php echo $data["rol"]; ?></td>
-                            <td><img src="<?php echo $foto; ?>" alt="<?php echo $data["descripcion"]; ?>" height="35px"width="35px"></td>
+                            <td><img src="<?php echo $data["foto"]; ?>" alt="<?php echo $data["foto"]; ?>" height="60px"width="60px"></td>
                             <td>
                                 <a class="link_edit" href="editar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="far fa-edit"></i> Editar</a>
 

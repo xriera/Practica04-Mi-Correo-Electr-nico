@@ -7,9 +7,10 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Usuario | Correo</title>
     </head>
-    <body>
+    <body><a href="../admin/includes/scripts.php"></a>
+        <?php include '../admin/includes/scripts.php'; ?>
         <?php include 'includes/header.php'; ?>
         <section id="container">
             <h1><i class="fas fa-users"></i>Perfil | Correo</h1>
@@ -56,17 +57,17 @@ and open the template in the editor.
                             <td><?php echo $data["rol"]; ?></td>
                             <td><img src="<?php echo $data["foto"]; ?>" alt="<?php echo $data["foto"]; ?>" height="60px"width="60px"></td>
                             <td>
-                                <a class="link_edit" href="editar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="far fa-edit"></i> Editar</a>
+                                <a class="link_edit" href="../admin/editar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="far fa-edit"></i> Editar</a>
 
                                 <?php //if ($data["idusuario"] != 1) {  ?>
                                 |
-                                <a class="link_delete" href="eliminar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                                <a class="link_delete" href="../admin/eliminar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Eliminar</a>
                                 |
-                                <a class="link_delete" href="cambiar_contrasena.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Cambiar Contraseña</a>
+                                <a class="link_delete" href="../admin/cambiar_contrasena.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Cambiar Contraseña</a>
                                  <?php //}  ?>
                             </td>
 
-                        </tr>
+                        </tr><a href="../admin/editar_usuario.php"></a>
                         <?php
                     }
                 }

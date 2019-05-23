@@ -10,7 +10,7 @@ and open the template in the editor.
         <title>Registro usuario | Correo</title>
     </head>
     <body>
-        
+        <?php include 'includes/scripts.php'; ?>
         <?php include '../../../config/conexionBD.php'; ?>
         <section id="container">
             <div class="form_register">

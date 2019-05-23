@@ -28,6 +28,7 @@ include '../../../config/conexionBD.php';
 <html>
     <head>
         <meta charset="UTF-8">
+         <?php include "includes/scripts.php"; ?>
         <title></title>
     </head>
     <body>

@@ -12,6 +12,7 @@ include '../../../conexion.php';
 
     </head>
     <body>
+         <?php include 'includes/scripts.php'; ?>
         <?php include 'includes/header.php'; ?>
         <section id="container">
             <h1><i class="fas fa-users"></i> Lista de usuarios</h1>

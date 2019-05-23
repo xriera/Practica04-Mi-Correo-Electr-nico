@@ -8,6 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Cambiar Contraseña</title>
+        <?php include 'includes/scripts.php'; ?>
     </head>
     <body>
           <h1><i class="fas fa-users"></i> Cambiar Contraseña</h1>

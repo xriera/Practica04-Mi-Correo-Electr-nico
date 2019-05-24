@@ -62,7 +62,7 @@ include '../../../conexion.php';
                                 |
                                 <a class="link_delete" href="eliminar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Eliminar</a>
                                 |
-                                <a class="link_delete" href="cambiar_contrasena.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Cambiar Contraseña</a>
+                                <a class="link_edit" href="cambiar_contrasena.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa fa-edit"></i> Cambiar Contraseña</a>
                                  <?php //}  ?>
                             </td>
 

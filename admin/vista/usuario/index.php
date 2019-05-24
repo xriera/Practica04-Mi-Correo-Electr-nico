@@ -15,7 +15,7 @@ and open the template in the editor.
         <section id="container">
             <h1><i class="fas fa-users"></i>Perfil | Correo</h1>
             <a href="../../vista/admin/registro_usuario.php" class="btn_new"><i class="fas fa-user-plus"></i> Crear Usuario</a>
-
+             <a href="../../vista/admin/registro_usuario.php" class="btn_new"><i class="fas fa-user-plus"></i> Crear Usuario</a>
             <!--  <form action="buscar_usuario.php" method="get" class="form_search">
                   <input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
                   <button type="submit" class="btn_search"><i class="fas fa-search"></i></button>

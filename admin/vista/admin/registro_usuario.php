@@ -31,7 +31,7 @@ and open the template in the editor.
                     <input type="password" name="clave" id="clave" placeholder="Clave de acceso">
                     
                     
-                <   <div class="photo">
+                   <div class="photo">
                         <label for="foto">Foto</label>
                         <div class="prevPhoto">
                             <span class="delPhoto notBlock">X</span>

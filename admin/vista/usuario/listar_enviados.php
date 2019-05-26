@@ -39,7 +39,8 @@ and open the template in the editor.
                        $idUsuario =$_SESSION['idUser'];
                        echo "usuario $idUsuario";
                 include '../../../config/conexionBD.php';
-                $query = mysqli_query($conn, "SELECT c.cor_fecha_hora,u.nombre,u.apellido, u.correo, c.cor_asunto, c.cor_mensaje FROM correos c, usuario u WHERE c.cor_usu_destinatario = u.idusuario and c.cor_usu_remitente= $idUsuario");
+                $query = mysqli_query($conn, "SELECT c.cor_fecha_hora,u.nombre,u.apellido, u.correo, c.cor_asunto, c.cor_mensaje FROM correos c, usuario u WHERE c.cor_usu_destinatario = '$idUsuario' and 
+'$idUsuario'= u.idusuario ORDER BY c.cor_fecha_hora DESC;");
                 mysqli_close($conn);
                 $result = mysqli_num_rows($query);
                 if ($result > 0) {

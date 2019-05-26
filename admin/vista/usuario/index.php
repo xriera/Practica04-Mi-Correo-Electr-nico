@@ -14,8 +14,8 @@ and open the template in the editor.
         <?php include 'includes/header.php'; ?>
         <section id="container">
             <h1><i class="fas fa-users"></i>Perfil | Correo</h1>
-            <a href="../../vista/admin/registro_usuario.php" class="btn_new"><i class="fas fa-user-plus"></i> Crear Usuario</a>
-             <a href="mensaje_nuevo.php" class="btn_new"><i class="fas fa-user-plus"></i> Mensaje Nuevo</a>
+            <a href="index.php" class="btn_new"><i class="fas fa-user-plus"></i> Index </a>
+            <a href="mensaje_nuevo.php" class="btn_new"><i class="fas fa-user-plus"></i> Mensaje Nuevo</a>
             <!--  <form action="buscar_usuario.php" method="get" class="form_search">
                   <input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
                   <button type="submit" class="btn_search"><i class="fas fa-search"></i></button>
@@ -23,39 +23,35 @@ and open the template in the editor.
 
             <table>
                 <tr>
-                    <th>ID</th>
+                    <th>Fecha</th>
                     <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Fecha de nacimiento</th>
+                    <th>Apellidos</th>
                     <th>Correo</th>
-                    <th>Rol</th>
-                    <th>Foto</th>
-                    <th>Acciones</th>
+                    <th>Asunto</th>
+                    <th>Mensaje</th>
 
                 </tr>
                 <a href="../../../"></a>
                 <?php
                 session_start();                      
-                       $correo = $_SESSION['email'];
+                     
+                       $idUsuario =$_SESSION['idUser'];
+                       echo "usuario $idUsuario";
                 include '../../../config/conexionBD.php';
-                $query = mysqli_query($conn, "SELECT * FROM usuario WHERE correo='$correo'");
+                $query = mysqli_query($conn, "SELECT c.cor_fecha_hora,u.nombre,u.apellido, u.correo, c.cor_asunto, c.cor_mensaje FROM correos c, usuario u WHERE c.cor_usu_destinatario = u.idusuario and c.cor_usu_remitente= $idUsuario");
                 mysqli_close($conn);
                 $result = mysqli_num_rows($query);
                 if ($result > 0) {
                     while ($data = mysqli_fetch_array($query)) {
-
-
                         ?>       
-
                         <tr>
-                            <td><?php echo $data["idusuario"]; ?></td>
+                            <td><?php echo $data["cor_fecha_hora"]; ?></td>
                             <td><?php echo $data["nombre"]; ?></td>
                             <td><?php echo $data["apellido"]; ?></td>
-                            <td><?php echo $data["fechaNacimiento"]; ?></td>
                             <td><?php echo $data["correo"]; ?></td>
-                            
-                            <td><?php echo $data["rol"]; ?></td>
-                            <td><img src="<?php echo $data["foto"]; ?>" alt="<?php echo $data["foto"]; ?>" height="60px"width="60px"></td>
+                            <td><?php echo $data["cor_asunto"]; ?></td>
+                            <td><?php echo $data["cor_mensaje"]; ?></td>                         
+                           
                             <td>
                                 <a class="link_edit" href="../admin/editar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="far fa-edit"></i> Editar</a>
 

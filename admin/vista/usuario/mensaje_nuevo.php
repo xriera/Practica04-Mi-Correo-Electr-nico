@@ -7,10 +7,18 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
+         <?php include 'includes/scripts.php'; ?>
         <title>Mensaje Nuevo</title>
     </head>
     <body>
-  <div class="form_register">
+        <?php include 'includes/header.php'; ?>
+        <div class="form_register">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
                 <h1><i class="fas fa-user-plus"></i> Mensaje nuevo | Correo</h1>
                 <hr>
                 <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>

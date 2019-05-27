@@ -11,6 +11,8 @@ and open the template in the editor.
         <?php include 'includes/scripts.php'; ?>
     </head>
     <body>
+        
+        <?php include 'includes/header.php'; ?><br>
           <h1><i class="fas fa-users"></i> Cambiar Contraseña</h1>
         <?php $codigo = $_GET["id"]; ?>
         

@@ -4,19 +4,18 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Usuario | Correo</title>
     </head>
-    <body><a href="../admin/includes/scripts.php"></a>
-        <?php include '../admin/includes/scripts.php'; ?>
+    <body>   
+        <?php include 'includes/scripts.php'; ?>
         <?php include 'includes/header.php'; ?>
         <section id="container">
-            <h1><i class="fas fa-users"></i>Perfil | Correo</h1>
-            <a href="index.php" class="btn_new"><i class="fas fa-user-plus"></i> Index </a>
-            <a href="mensaje_nuevo.php" class="btn_new"><i class="fas fa-user-plus"></i> Mensaje Nuevo</a>
-             <a href="listar_enviados.php" class="btn_new"><i class="fas fa-user-plus"></i> Mensajes enviados</a>
+            <h1><i class="fas fa-users"></i>Mensajes Recibidos | Correo</h1>
+        
             <!--  <form action="buscar_usuario.php" method="get" class="form_search">
                   <input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
                   <button type="submit" class="btn_search"><i class="fas fa-search"></i></button>
@@ -30,16 +29,18 @@ and open the template in the editor.
                     <th>Correo</th>
                     <th>Asunto</th>
                     <th>Mensaje</th>
+                    <th>Accion</th>
 
                 </tr>
-                <a href="../../../"></a>
+               
                 <?php
                 session_start();                      
                      
                        $idUsuario =$_SESSION['idUser'];
-                       echo "usuario $idUsuario";
+                     //  echo "usuario $idUsuario";
                 include '../../../config/conexionBD.php';
-                $query = mysqli_query($conn, "SELECT c.cor_fecha_hora,u.nombre,u.apellido, u.correo, c.cor_asunto, c.cor_mensaje FROM correos c, usuario u WHERE c.cor_usu_destinatario = u.idusuario and c.cor_usu_remitente= $idUsuario");
+                $query = mysqli_query($conn, "SELECT c.cor_fecha_hora,u.nombre,u.apellido, u.correo, c.cor_asunto, c.cor_mensaje FROM correos c, usuario u WHERE c.cor_usu_destinatario = '$idUsuario' and 
+'$idUsuario'= u.idusuario ORDER BY c.cor_fecha_hora DESC;");
                 mysqli_close($conn);
                 $result = mysqli_num_rows($query);
                 if ($result > 0) {
@@ -54,20 +55,16 @@ and open the template in the editor.
                             <td><?php echo $data["cor_mensaje"]; ?></td>                         
                            
                             <td>
-                                <a class="link_edit" href="../admin/editar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="far fa-edit"></i> Editar</a>
+                                <a class="link_edit" href="leer_mensaje.php?id=<?php echo $data["idusuario"]; ?>"><i class="far fa-edit"></i> Leer</a>
 
-                                <?php //if ($data["idusuario"] != 1) {  ?>
-                                |
-                                <a class="link_delete" href="../admin/eliminar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Eliminar</a>
-                                |
-                                <a class="link_delete" href="../admin/cambiar_contrasena.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Cambiar Contraseña</a>
-                                 <?php //}  ?>
+
                             </td>
 
                         </tr><a href="../admin/editar_usuario.php"></a>
                         <?php
                     }
                 }
+                $conn->close();
                 ?>
 
             </table>
@@ -75,6 +72,6 @@ and open the template in the editor.
            
         </section>
 
-        <?php include "includes/footer.php"; ?>
+        <?php include "../../../css/estilos/includes/footer.php"; ?>
     </body>
 </html>

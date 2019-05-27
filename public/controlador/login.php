@@ -35,8 +35,8 @@
                         $_SESSION['email'] = $data['correo'];
                         $_SESSION['rol'] = $data['rol'];
                         if($data[rol] != 2){
-                        header('location: ../../admin/vista/admin/index.php');
-                        } else {
+                                 header('location: ../../admin/vista/admin/index.php');
+                        } if($data[rol] != 1) {
                         header('location: ../../admin/vista/usuario/index.php');
                         }
                     } else {

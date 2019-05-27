@@ -33,7 +33,7 @@ include '../../../config/conexionBD.php';
     </head>
     <body>
     <body>
-        <?php //include "includes/header.php";
+        <?php include "includes/header.php";
         include '../../../config/conexionBD.php';
         ?>
         <section id="container">

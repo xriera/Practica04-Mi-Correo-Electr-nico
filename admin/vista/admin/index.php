@@ -2,20 +2,22 @@
  <?php
 session_start();
 include '../../../conexion.php';
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-
+<?php include 'includes/scripts.php'; ?>
         <title>Lista de Usuarios Cooreo</title>
 
     </head>
     <body>
-         <?php include 'includes/scripts.php'; ?>
+
         <?php include 'includes/header.php'; ?>
         <section id="container">
-            <h1><i class="fas fa-users"></i> Lista de usuarios</h1>
+            <h1><i class="fas fa-users"></i> Mensajes Electrónicos</h1>
             <a href="../../vista/admin/registro_usuario.php" class="btn_new"><i class="fas fa-user-plus"></i> Crear Usuario</a>
 
             <!--  <form action="buscar_usuario.php" method="get" class="form_search">
@@ -23,56 +25,56 @@ include '../../../conexion.php';
                   <button type="submit" class="btn_search"><i class="fas fa-search"></i></button>
               </form> -->
 
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Fecha de nacimiento</th>
-                    <th>Correo</th>
-                    <th>Rol</th>
-                    <th>Foto</th>
-                    <th>Acciones</th>
-
-                </tr>
-              
-                <?php
-                include '../../../config/conexionBD.php';
-                $query = mysqli_query($conn, "SELECT u.idusuario, u.nombre, u.apellido,u.fechaNacimiento, u.correo,u.foto, r.rol FROM usuario  u INNER JOIN rol r  ON u.rol=r.idrol WHERE estatus = 1 ORDER BY u.idusuario");
-                mysqli_close($conn);
-                $result = mysqli_num_rows($query);
-                if ($result > 0) {
-                    while ($data = mysqli_fetch_array($query)) {
-
-
-                        ?>       
-
-                        <tr>
-                            <td><?php echo $data["idusuario"]; ?></td>
-                            <td><?php echo $data["nombre"]; ?></td>
-                            <td><?php echo $data["apellido"]; ?></td>
-                            <td><?php echo $data["fechaNacimiento"]; ?></td>
-                            <td><?php echo $data["correo"]; ?></td>
-                            <td><?php echo $data["rol"]; ?></td>
-                            <td><img src="<?php echo $data["foto"]; ?>" alt="<?php echo $data["foto"]; ?>" height="60px"width="60px"></td>
-                            <td>
-                                <a class="link_edit" href="editar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="far fa-edit"></i> Editar</a>
-
-                                <?php //if ($data["idusuario"] != 1) {  ?>
-                                |
-                                <a class="link_delete" href="eliminar_usuario.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa-trash-alt"></i> Eliminar</a>
-                                |
-                                <a class="link_edit" href="cambiar_contrasena.php?id=<?php echo $data["idusuario"]; ?>"><i class="fas fa fa-edit"></i> Cambiar Contraseña</a>
-                                 <?php //}  ?>
-                            </td>
-
-                        </tr>
-                        <?php
+  <table id="tbl">
+            <caption>
+                <h4></h4>
+            </caption>
+            <tr>
+                <th>Fecha</th>
+                <th>Remitente</th>
+                <th>Destinatario</th>
+                <th>Asunto</th>
+                <th>Accion</th>
+            </tr>
+            <?php
+            include '../../../config/conexionBD.php';
+            $sql = "SELECT * FROM correos WHERE cor_eliminado='N' ORDER BY cor_fecha_hora DESC;";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $codigo = $row["cor_codigo"];
+                    $fecha = $row["cor_fecha_hora"];
+                    $asunto = $row["cor_asunto"];
+                    $array = array(0 => $row["cor_usu_remitente"], 1 => $row["cor_usu_destinatario"]);
+                    $array2 = [];
+                    foreach ($array as $i => $value) {
+                        $bus = "SELECT * FROM usuario WHERE idusuario=$array[$i];";
+                        $resultb = $conn->query($bus);
+                        if ($resultb->num_rows > 0) {
+                            while ($row = $resultb->fetch_assoc()) {
+                                $idusuario = $row["idusuario"];
+                                $array2[] = $row["correo"];
+                            }
+                        }
                     }
+                    echo "<tr>";
+                    echo "   <td>" . $fecha . "</td>";
+                    echo "   <td>" . $array2[0] . "</td>";
+                    echo "   <td>" . $array2[1] . "</td>";
+                    echo "   <td>" . $asunto . "</td>";
+                    echo "   <td> <a href='eliminar_usuario.php?id=$idusuario'> Eliminar | </a> "
+                            . "<a href='editar_usuario.php?id=$idusuario'> Modificar | </a> "
+                            . "<a href='cambiar_contrasena.php?id=$idusuario'> Cambiar Contraseña </a></td>";
+                    echo "</tr>";
                 }
-                ?>
-
-            </table>
+            } else {
+                echo "<tr>";
+                echo "   <td colspan='7'> No existen correos registrados al usuario </td>";
+                echo "</tr>";
+            }
+            $conn->close();
+            ?>
+        </table>
 
            
         </section>

@@ -10,6 +10,16 @@
                 </ul>
             </li>
         <?php } ?>
-
+        <li class="principal">
+            <a href="mensaje_nuevo.php">Mensaje Nuevo</a>
+        </li>
+        <?php if ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2) { ?>
+           
+        <?php } ?>
+        <li class="principal">
+            <a href="listar_enviados.php"><i class="fas fa-cubes"></i> Mensajes enviados</a>
+            
+        </li>
+      
     </ul>
 </nav>

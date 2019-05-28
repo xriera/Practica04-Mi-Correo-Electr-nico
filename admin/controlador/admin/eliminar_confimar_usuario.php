@@ -24,12 +24,12 @@ and open the template in the editor.
             $query_delete = mysqli_query($conn, "UPDATE usuario SET estatus = 0 WHERE idusuario = $iduser");
 
             if ($query_delete) {
-                header('Location: ../../vista/admin/index.php');
+                header('Location: ../../vista/admin/listar_usuarios.php');
             } else {
                 echo 'Error al Eliminar';
             }
       //  }
             $conn->close();
         ?>
-    </body ><a href="../../vista/admin/index.php"></a>
+    </body ><a href="../../vista/admin/listar_usuarios.php"></a>
 </html>

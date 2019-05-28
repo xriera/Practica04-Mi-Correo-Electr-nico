@@ -15,6 +15,10 @@ include '../../../../config/conexionBD.php';
             <span class="user"><?php echo $_SESSION['idUsers'].' - '.$_SESSION['rol'].' - '.$_SESSION['email']; ?> </span>
          <!-- <img class="photouser" src="img/user.png" alt="Usuario"> -->
          <!-- <a href="salir.php"><img class="close" src="img/salir.png" alt="Salir del sistema" title="Salir"></a> -->
+              <style>
+    a { color: white; }
+  </style>
+            <a href="includes/salir.php">Salir</a>
         </div>
     </div>
     <?php include "nav.php"; ?>

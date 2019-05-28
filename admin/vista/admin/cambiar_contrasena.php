@@ -11,8 +11,10 @@ and open the template in the editor.
         <?php include 'includes/scripts.php'; ?>
     </head>
     <body>
-        
-        <?php include 'includes/header.php'; ?><br>
+         <?php include 'includes/header.php'; ?>
+        <section id="container">
+             <div class="form_register">
+       <br>
           <h1><i class="fas fa-users"></i> Cambiar Contraseña</h1>
         <?php $codigo = $_GET["id"]; ?>
         
@@ -28,5 +30,8 @@ and open the template in the editor.
             <input type="submit" id="modificar" name="modificar" value="Modificar" />
             <input type="reset" id="cancelar" name="cancelar" value="Cancelar" />
         </form>
-    </body><a href="../controlador/modificar_contrasena.php"></a>
+             </div>
+        </section>
+        <?php include "includes/footer.php"; ?> 
+    </body>
 </html>

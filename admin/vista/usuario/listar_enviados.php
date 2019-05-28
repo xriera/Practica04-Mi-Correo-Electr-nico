@@ -1,3 +1,10 @@
+<?php
+ include '../../../config/conexionBD.php';
+session_start();
+if ($_SESSION['rol'] != 1 and $_SESSION['rol'] != 2) {
+    header("location: ../../../public/vista/login.php");
+} 
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.

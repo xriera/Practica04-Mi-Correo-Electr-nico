@@ -560,3 +560,7 @@ table td {
 	margin: 0 3px;
 	color: #FFF;
 }
+#mensaje {
+    width: 380px;
+    height: 150px;
+}

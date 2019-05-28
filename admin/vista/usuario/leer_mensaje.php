@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -37,7 +38,7 @@ and open the template in the editor.
                 <meta charset="UTF-8">
                 
          <?php include 'includes/scripts.php'; ?>
-                <title>Mensaje Nuevo</title><a href="../../../config/conexionBD.php"></a>
+                <title>Mensaje Nuevo</title>
             </head>
             <body>
                 <?php include 'includes/header.php'; ?>

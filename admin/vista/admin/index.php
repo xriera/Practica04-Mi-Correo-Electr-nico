@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if ($_SESSION['rol'] != 1 and $_SESSION['rol'] != 2) {
+    header("location: ../../../public/vista/login.php");
+}
+include '../../../config/conexionBD.php';
+?>
  <?php
 session_start();
 include '../../../conexion.php';
@@ -16,7 +22,7 @@ include '../../../conexion.php';
     <body>
 
         <?php include 'includes/header.php'; ?>
-        <section id="container">
+        <section id="container"><a href="../../../public/vista/login.php"></a>
             <h1><i class="fas fa-users"></i> Mensajes Electrónicos</h1>
             <a href="../../vista/admin/registro_usuario.php" class="btn_new"><i class="fas fa-user-plus"></i> Crear Usuario</a>
 

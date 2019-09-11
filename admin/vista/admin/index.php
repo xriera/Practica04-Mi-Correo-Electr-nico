@@ -68,9 +68,9 @@ include '../../../conexion.php';
                     echo "   <td>" . $array2[0] . "</td>";
                     echo "   <td>" . $array2[1] . "</td>";
                     echo "   <td>" . $asunto . "</td>";
-                    echo "   <td> <a href='eliminar_usuario.php?id=$idusuario'> Eliminar | </a> "
-                            . "<a href='editar_usuario.php?id=$idusuario'> Modificar | </a> "
-                            . "<a href='cambiar_contrasena.php?id=$idusuario'> Cambiar Contraseña </a></td>";
+                    echo "   <td> <a href='eliminar_usuario.php?id=$idusuario'> Eliminar</a> "
+                            . "<a href='editar_usuario.php?id=$idusuario'></a> "
+                            . "<a href='cambiar_contrasena.php?id=$idusuario'></a></td>";
                     echo "</tr>";
                 }
             } else {

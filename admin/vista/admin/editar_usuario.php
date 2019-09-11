@@ -17,7 +17,7 @@ and open the template in the editor.
                 . "FROM usuario u "
                 . "INNER JOIN rol r "
                 . "ON u.rol = r.idrol "
-                . "WHERE idusuario= $iduser AND estatus = 1");
+                . "WHERE idusuario= $iduser AND estatus = 1" );
         mysqli_close($conn);
         $result_sql = mysqli_num_rows($sql);
          

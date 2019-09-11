@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <?php include 'includes/scripts.php'; ?>
-        <title>Lista de Usuarios_Supermercado</title>
+        <title>Lista de Usuarios</title>
 
     </head>
     <body>
